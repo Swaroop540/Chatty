@@ -4,6 +4,7 @@ Created on Wed Oct  2 09:49:13 2024
 
 @author: swaro
 """
+
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
@@ -156,15 +157,15 @@ def get_disease_link(disease_name):
     return disease_links.get(disease_name, "Sorry, I don't have a link for this disease.")
 
 def main():
-    st.set_page_config(page_title="Medical Diagnosis Chatbot", page_icon="💬", layout="wide")
+    st.set_page_config(page_title="Chatty - MedBot", page_icon="💬", layout="wide")
 
     st.markdown("""
         <style>
         body {
-            background-color: #e0f7fa;
+            background-color: #a1dbe3;
         }
         h1, h2, h3 {
-            color: #004d40;
+            color: #177538;
         }
         .stButton>button {
             background-color: #00796b;
