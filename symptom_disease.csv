@@ -1,0 +1,161 @@
+fever,cough,headache,fatigue,sore_throat,shortness_of_breath,chest_pain,nausea,diarrhea,rash,joint_pain,disease
+1,1,0,1,0,0,0,0,0,0,0,Flu
+1,1,0,1,1,0,0,0,0,0,0,Common Cold
+0,0,1,1,0,0,0,1,0,0,0,Migraine
+1,0,0,1,0,1,1,0,0,0,0,Pneumonia
+0,1,0,0,1,0,0,1,1,0,0,Gastroenteritis
+1,1,1,1,0,1,1,0,0,0,0,COVID-19
+1,0,0,1,0,1,0,0,0,0,0,Bronchitis
+0,1,0,0,1,0,0,0,1,0,0,Strep Throat
+1,0,0,1,0,0,1,0,0,0,0,Heart Attack
+0,0,1,1,0,0,0,1,1,0,0,Food Poisoning
+1,0,0,1,0,1,1,0,0,0,0,Asthma
+1,1,1,1,1,1,0,0,0,0,0,Mononucleosis
+0,0,0,0,0,1,1,1,0,0,0,Pulmonary Embolism
+1,1,0,0,0,1,1,0,0,0,0,Lung Cancer
+1,0,0,1,0,0,0,1,0,0,0,Hepatitis A
+1,0,0,1,0,1,0,0,0,1,0,Measles
+1,1,0,0,1,0,0,0,0,0,1,Rheumatic Fever
+1,1,0,1,0,1,1,0,1,0,0,SARS
+0,0,1,0,0,0,0,0,0,0,1,Rheumatoid Arthritis
+1,0,1,1,0,0,0,0,0,0,1,Dengue Fever
+0,0,0,1,0,1,0,0,0,1,0,Varicella
+0,1,1,1,0,1,1,0,0,0,0,Tuberculosis
+1,1,0,0,1,0,0,0,1,0,0,Tonsillitis
+1,0,0,0,0,1,1,0,0,0,0,COPD
+1,0,0,1,1,1,1,0,0,0,0,RSV
+0,0,1,0,0,0,0,0,0,0,0,Tension Headache
+1,0,1,1,1,1,1,0,0,0,0,Bacterial Pneumonia
+0,1,1,1,0,1,1,0,0,0,0,Whooping Cough
+1,1,0,0,0,0,0,1,1,0,0,Norovirus
+1,1,1,1,0,0,0,1,0,0,0,Malaria
+1,1,0,1,0,1,0,1,1,0,0,Ebola
+0,0,1,1,0,0,0,1,0,0,0,Typhoid Fever
+1,0,0,0,1,0,0,0,0,1,0,Rubella
+0,0,1,0,0,0,0,0,0,0,0,Cluster Headache
+1,0,1,1,1,0,0,0,0,0,1,Lyme Disease
+1,0,0,1,1,0,0,1,1,0,0,Giardiasis
+0,0,0,0,1,0,0,0,1,0,0,Salmonella Infection
+1,0,1,1,1,1,1,1,0,0,1,Zika Virus
+0,1,0,0,1,0,0,1,0,1,0,Shigellosis
+1,0,1,1,0,1,1,1,0,1,1,Chikungunya
+0,0,0,1,0,0,1,0,0,0,1,Gout
+1,0,1,1,0,0,0,0,1,1,0,Yellow Fever
+1,1,0,1,1,1,1,1,1,0,1,Hantavirus Pulmonary Syndrome
+0,0,0,0,0,0,0,0,1,0,0,Irritable Bowel Syndrome
+1,0,0,1,1,1,1,0,0,0,0,MERS
+0,1,1,1,0,0,1,1,1,0,0,Bubonic Plague
+1,1,1,1,1,1,0,0,0,0,0,Sepsis
+1,0,0,0,0,1,0,0,0,1,0,Scarlet Fever
+0,0,1,0,0,0,0,0,0,1,1,Psoriatic Arthritis
+1,1,0,1,0,0,0,0,0,0,0,Mumps
+0,1,0,0,0,0,0,0,0,0,0,Allergic Rhinitis
+1,1,0,1,0,0,0,0,0,0,0,Influenza A
+1,1,0,1,0,0,0,0,0,0,0,Influenza B
+0,0,0,1,0,0,0,1,1,0,0,Cholera
+1,0,1,1,0,0,0,1,0,0,0,Leptospirosis
+1,1,0,0,1,0,0,0,1,0,0,Tonsillitis
+0,0,1,1,0,0,0,0,0,0,0,Sinus Headache
+1,1,1,0,1,0,0,0,0,0,0,Epiglottitis
+0,1,0,0,1,1,0,0,0,0,0,Laryngitis
+0,0,0,1,0,1,0,0,1,0,0,Legionnaire's Disease
+1,1,1,1,1,1,1,0,0,0,0,Anthrax
+1,1,1,1,1,0,0,0,0,0,0,Leukemia
+0,0,1,0,0,0,0,0,0,0,0,Tension Headache
+1,1,1,1,0,0,0,1,0,0,0,Malaria
+1,0,0,1,1,1,1,0,0,0,0,RSV
+0,0,1,0,0,0,0,0,0,1,0,Psoriatic Arthritis
+1,1,0,0,0,0,0,0,1,0,1,Scarlet Fever
+0,0,0,1,0,1,0,0,0,1,0,Chickenpox
+1,0,0,1,0,1,0,0,0,1,0,Measles
+1,1,0,1,0,1,0,1,1,0,0,Ebola
+0,0,1,1,0,0,0,1,0,0,0,Typhoid Fever
+1,0,0,0,1,0,0,0,0,1,0,Rubella
+1,0,1,1,0,1,1,1,0,1,1,Chikungunya
+1,1,0,0,1,0,0,0,1,0,0,Tonsillitis
+0,0,0,1,0,0,0,0,0,0,1,Gout
+1,0,1,1,0,0,0,0,1,1,0,Yellow Fever
+0,0,1,1,0,0,0,1,0,0,0,Typhoid Fever
+0,1,0,0,0,0,0,0,0,1,1,Laryngitis
+1,1,1,1,1,0,0,0,0,0,0,Leukemia
+0,1,0,0,1,0,0,1,0,1,0,Shigellosis
+1,0,1,1,1,1,1,1,0,0,1,Zika Virus
+1,1,0,1,1,1,0,0,0,0,1,Lupus
+0,0,1,0,1,0,0,1,0,0,0,Peptic Ulcer
+1,0,1,1,0,0,1,0,0,0,0,Myocarditis
+1,1,1,1,1,0,0,0,1,0,1,Sjogren's Syndrome
+0,1,1,0,0,1,1,1,0,0,0,Chronic Bronchitis
+0,0,0,1,0,0,0,0,0,0,0,Chronic Fatigue Syndrome
+1,0,1,1,0,0,0,1,1,0,0,Amoebiasis
+0,1,0,0,0,1,0,1,1,0,0,Acute Respiratory Distress Syndrome
+1,1,1,1,0,1,0,0,0,0,0,Pharyngitis
+1,0,0,0,0,0,0,1,1,0,0,Cholera
+1,0,0,1,0,0,0,1,0,1,0,Dysentery
+0,0,1,1,0,1,0,0,0,0,0,Multiple Sclerosis
+0,1,1,1,0,1,1,1,0,0,1,Rheumatoid Arthritis
+1,1,0,0,0,1,1,1,0,0,0,Pulmonary Hypertension
+1,1,1,1,0,0,0,1,0,0,1,Chikungunya
+1,0,0,0,1,1,0,0,1,0,0,Legionnaires' Disease
+0,0,1,0,1,0,0,0,0,0,1,Osteoarthritis
+1,1,0,1,1,0,0,0,1,0,0,Scarlet Fever
+1,0,1,0,0,1,1,0,0,0,1,Pericarditis
+0,1,0,1,1,0,0,0,0,0,0,Laryngitis
+1,1,1,1,0,0,0,1,0,0,1,Typhus
+1,0,1,0,0,0,1,0,1,0,0,HIV/AIDS
+1,1,0,1,1,0,0,1,0,0,1,Dengue Fever
+0,0,0,0,1,1,1,0,0,0,0,Pneumothorax
+1,0,1,1,0,0,0,1,0,0,0,Influenza A
+0,1,1,1,1,1,1,0,0,0,0,Pneumonia
+1,1,1,1,1,0,0,0,0,0,1,Hemophilia
+0,1,0,0,1,1,1,1,0,0,0,Pulmonary Fibrosis
+1,0,0,0,1,0,1,0,0,1,0,Varicella
+1,0,1,0,1,1,0,0,0,0,1,Septic Arthritis
+0,1,1,1,0,0,1,0,0,0,0,Bronchiolitis
+1,0,0,1,0,0,0,0,0,0,0,Seasonal Flu
+0,1,0,0,0,1,1,0,1,0,0,Lung Fibrosis
+1,1,0,1,1,1,0,1,0,0,0,Chronic Obstructive Pulmonary Disease
+1,1,1,1,0,0,0,0,0,0,0,Viral Meningitis
+1,1,0,0,1,1,0,1,1,0,0,Meningococcal Disease
+1,0,0,0,0,0,1,0,0,0,0,Angina
+1,1,0,0,0,0,0,0,0,1,1,Psoriasis
+0,0,0,1,0,0,1,1,0,0,0,Hyperventilation Syndrome
+1,1,0,0,0,1,0,0,1,1,0,Lyme Disease
+1,0,1,1,1,0,0,0,0,0,1,Tularemia
+0,0,1,1,0,0,0,1,1,0,0,Tuberculosis
+1,1,0,1,1,1,1,1,1,0,0,Ehrlichiosis
+1,0,0,0,0,0,0,0,0,1,1,Juvenile Arthritis
+0,1,1,1,1,0,1,0,0,0,0,Infectious Mononucleosis
+1,1,1,1,0,0,0,1,0,0,0,Eastern Equine Encephalitis
+1,0,1,1,1,0,1,0,0,0,0,Endocarditis
+0,1,1,1,1,1,0,1,0,0,1,Schistosomiasis
+1,0,1,1,1,0,0,0,1,0,1,Leptospirosis
+1,0,0,1,0,1,0,1,0,0,1,Mumps
+0,1,1,1,1,0,1,1,0,0,0,Bronchopneumonia
+1,0,0,1,0,1,1,0,0,0,0,Coronary Artery Disease
+1,1,1,0,0,0,0,0,0,1,0,Fifth Disease
+1,1,0,0,0,0,1,0,0,1,1,Hemolytic Uremic Syndrome
+0,0,1,0,1,0,1,1,0,0,0,Peritonitis
+0,1,1,1,0,0,1,0,1,0,0,RSV (Respiratory Syncytial Virus)
+1,0,1,0,1,0,0,1,0,1,0,Cytomegalovirus
+1,1,0,1,0,0,0,0,0,0,1,Lassa Fever
+0,0,1,0,0,0,0,0,1,0,0,IBS (Irritable Bowel Syndrome)
+1,1,1,1,1,0,0,1,1,0,0,Hepatitis C
+1,1,1,0,0,1,0,1,0,0,0,Toxic Shock Syndrome
+1,1,1,0,1,1,0,0,1,0,0,SARS-CoV-1
+1,1,0,1,0,1,1,1,0,0,1,Epstein-Barr Virus
+0,1,0,1,1,0,1,0,1,0,0,West Nile Virus
+1,0,0,1,0,1,0,1,0,1,0,Rabies
+1,1,0,1,0,0,0,1,0,1,0,Hantavirus
+0,0,1,0,1,1,0,1,0,0,0,Histoplasmosis
+1,0,0,1,1,1,0,1,0,0,0,Lassa Virus
+0,1,1,1,0,0,0,0,1,1,0,Rocky Mountain Spotted Fever
+1,0,1,1,1,0,0,1,0,0,0,Cryptosporidiosis
+1,1,0,1,0,1,1,0,1,1,0,Middle East Respiratory Syndrome (MERS)
+1,0,1,0,0,0,1,0,0,1,0,Babesiosis
+0,0,0,1,1,1,1,0,0,0,0,Melioidosis
+0,1,1,0,1,1,1,0,0,1,1,Tick-borne Encephalitis
+1,1,1,0,0,1,1,0,1,0,1,Nipah Virus
+0,0,1,1,0,1,0,0,1,0,1,Chagas Disease
+1,1,0,1,1,0,1,1,0,0,0,Q Fever
+0,1,1,1,1,0,1,1,0,1,0,Paratyphoid Fever
+
