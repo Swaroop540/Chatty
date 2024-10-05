@@ -1,0 +1,210 @@
+fever,cough,headache,fatigue,sore_throat,shortness_of_breath,chest_pain,nausea,diarrhea,rash,joint_pain,eye_irritation,vision_problems,abnormal_menstrual_bleeding,menstrual_cramps,bloating,acid_reflux,disease,category
+1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Flu,C
+1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,Common Cold,C
+0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,C
+1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Pneumonia,C
+0,1,0,0,1,0,0,1,1,0,0,0,0,0,0,1,0,Gastroenteritis,C
+1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,COVID-19,C
+1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,Bronchitis,C
+0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Strep Throat,C
+1,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,Heart Attack,A
+0,0,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,Food Poisoning,F
+1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Asthma,I
+1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,Mononucleosis,C
+0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,Pulmonary Embolism,A
+1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,Lung Cancer,I
+1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Hepatitis A,C
+1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,Measles,C
+1,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,Rheumatic Fever,I
+1,1,0,1,0,1,1,0,1,0,0,0,0,0,0,0,0,SARS,C
+0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,Rheumatoid Arthritis,B
+1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,Dengue Fever,C
+0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,Varicella,C
+0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Tuberculosis,C
+1,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Tonsillitis,C
+1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,COPD,A
+1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,RSV,C
+0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Tension Headache,C
+1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,Bacterial Pneumonia,C
+0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Whooping Cough,C
+1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,Norovirus,C
+1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Malaria, C
+1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,Ebola,C
+0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Typhoid Fever,C
+1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,Rubella,C
+0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Cluster Headache,C
+1,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,Lyme Disease,C
+1,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,Giardiasis,C
+0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Salmonella Infection,C
+1,0,1,1,1,1,1,1,0,0,1,0,0,0,0,0,0,Zika Virus,C
+0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,Shigellosis,C
+1,0,1,1,0,1,1,1,0,1,1,0,0,0,0,0,0,Chikungunya,C
+0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,Gout,B
+1,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,Yellow Fever,C
+1,1,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,Hantavirus Pulmonary Syndrome,C
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,Irritable Bowel Syndrome,F
+1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,MERS,C
+0,1,1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,Bubonic Plague,I
+1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,Sepsis,C
+1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,Scarlet Fever,C
+0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,Psoriatic Arthritis,B
+1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Mumps,C
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Allergic Rhinitis,C
+1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Influenza,C
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,Conjunctivitis,H
+1,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,Eye Infection,H
+0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,Vision Problems,H
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,Abnormal Menstrual Bleeding,I
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Menstrual Cramps,I
+0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Bloating,I
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,Acid Reflux,F
+1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,SARS-CoV-2 Variant,C
+0,0,1,1,0,1,0,0,1,0,0,0,0,0,0,0,0,Influenza B,C
+1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,Rabies,C
+1,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,Lassa Fever,C
+0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,E. Coli Infection,I
+0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Cryptosporidiosis,C
+1,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Malnutrition,I
+0,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,Shigella Infection,C
+1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,West Nile Virus,I
+1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Lyme Borreliosis,C
+0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,Campylobacter Infection,I
+1,0,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Zoonotic Influenza,I
+1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,Nipah Virus,C
+1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,Lymphocytic Choriomeningitis,C
+1,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,Hemorrhagic Fever,C
+0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,Epstein-Barr Virus,C
+1,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,Hepatitis B,C
+1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Severe Malaria,C
+1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Hantavirus Infection,I
+0,0,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,Zika Fever,C
+1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,Yellow Fever Hemorrhagic,C
+1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,Tick-Borne Encephalitis,C
+1,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,Avian Influenza,C
+1,1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Leptospirosis,C
+0,1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,Acute Gastroenteritis,C
+1,1,1,1,0,1,1,0,1,0,0,0,0,0,0,0,0,Severe Acute Respiratory Syndrome,C
+0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Brucellosis,C
+1,1,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,Measles Virus,C
+1,0,1,1,0,1,1,1,0,1,0,0,0,0,0,0,0,Plague,I
+0,1,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,Viral Hemorrhagic Fever,C
+1,0,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,Leprosy,I
+0,0,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,Amebiasis,C
+1,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,Helicobacter Pylori Infection,F
+1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,Coronavirus HKU1,C
+1,0,1,1,0,1,1,0,1,0,0,0,0,0,0,0,0,Enterovirus Infection,C
+0,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,Cholera,F
+1,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,Taeniasis,C
+0,0,0,1,1,0,1,1,1,0,0,0,0,0,0,0,0,Alveolar Echinococcosis,I
+0,0,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,Echinococcosis,C
+1,1,1,0,1,1,0,1,0,1,0,0,0,0,0,0,0,Human Metapneumovirus,C
+1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,Rotavirus Infection,C
+0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Enteric Fever,C
+1,1,1,0,1,1,1,0,1,0,0,0,0,0,0,0,0,Venezuelan Equine Encephalitis,C
+1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,Dengue Hemorrhagic Fever,C
+0,0,1,1,0,0,0,1,0,1,1,0,0,0,0,0,0,Shingles,C
+0,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,Human Papillomavirus,C
+1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,Rift Valley Fever,C
+0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Middle East Respiratory Syndrome,C
+1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,Lymphatic Filariasis,I
+1,1,0,0,1,1,1,0,1,1,0,0,0,0,0,0,0,Crimean-Congo Hemorrhagic Fever,C
+0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,0,0,Chikungunya Fever,C
+1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,Poliomyelitis,C
+0,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,Acute Viral Hepatitis,I
+0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,Syphilis,C
+1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,Varicella-Zoster Virus,C
+1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Parvovirus B19 Infection,I
+1,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,Bunyavirus Infection,C
+1,1,1,0,1,1,0,1,1,0,0,0,0,0,0,0,0,Bovine Spongiform Encephalopathy,C
+0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,Acinetobacter Infection,C
+1,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,Schistosomiasis,C
+0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,Acute Lymphoblastic Leukemia,I
+1,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,Tularemia,C
+1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,Japanese Encephalitis,C
+1,1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Orthomyxovirus Infection,C
+1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,Salmonellosis,C
+1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Toxoplasmosis,C
+1,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,Onchocerciasis,C
+1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,Rabies Hemorrhagic Fever.C
+1,0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,HIV/AIDS,C
+0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,Hepatitis C Virus,C
+1,1,1,0,0,1,1,0,1,0,0,0,0,0,0,0,0,Viral Hepatitis E,C
+0,1,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,Respiratory Syncytial Virus Infection,I
+0,0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,Pneumocystis Pneumonia,C
+1,1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,Whipple's Disease,C
+1,0,1,0,0,1,0,0,1,1,0,0,0,0,0,0,0,Clostridium Difficile Infection,C
+1,0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Strongyloidiasis,C
+1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Infectious Mononucleosis,C
+1,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Malaria Hemorrhagic Fever,C
+0,1,1,0,1,1,0,1,0,0,0,0,0,0,0,0,0,Fascioliasis,C
+0,1,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Bacterial Meningitis,C
+0,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,Influenza A,C
+1,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,Bacterial Pneumonia,C
+1,1,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,Ebola Virus,C
+1,0,1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,Hemolytic Uremic Syndrome,C
+1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Typhoid Fever,C
+0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,Vibrio Cholerae,C
+0,0,0,1,1,0,1,1,1,0,0,0,0,0,0,0,0,Leishmaniasis,C
+1,1,1,0,1,1,0,1,0,1,0,0,0,0,0,0,0,Meningococcal Infection,C
+1,0,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,Sepsis,C
+0,0,1,1,0,1,0,0,1,0,0,0,0,0,0,0,0,Shiga Toxin-Producing E. coli,I
+1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,Dengue Fever,C
+1,0,1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,Hemorrhagic Cystitis,C
+1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,Streptococcal Infection,C
+0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,Yersiniosis,C
+1,1,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,Zoster Virus,C
+1,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,HIV Infection,C
+1,0,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0,Mumps,C
+1,1,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,Histoplasmosis,C
+1,1,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,Anthrax,C
+0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,Listeriosis,I
+1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Legionnaires' Disease,C
+1,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,Rocky Mountain Spotted Fever,C
+1,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,Respiratory Anthrax,C
+0,1,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,Hand-Foot-Mouth Disease,C
+1,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Babesia Infection,C
+0,0,1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,Ehrlichiosis,C
+1,0,1,0,1,0,1,1,1,0,0,0,0,0,0,0,0,Toxocariasis,C
+1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Respiratory Syncytial Virus (RSV),C
+1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,Hepatitis A,C
+0,1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,Campylobacteriosis,I
+1,1,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Guillain-Barré Syndrome,C
+0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,Smallpox,C
+1,0,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,Paratyphoid Fever,C
+0,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,RSV Pneumonia,C
+1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Q Fever,C
+1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Rift Valley Fever Virus,C
+1,0,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,Marburg Virus,C
+0,1,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,Hand-Foot-Mouth Syndrome,C
+1,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,Tularemia,I
+1,0,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,Coccidioidomycosis,C
+0,1,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,Kaposi's Sarcoma,C
+1,1,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,Herpes Simplex Virus,C
+1,1,1,1,0,1,1,0,0,1,0,0,0,0,0,0,0,Respiratory Adenovirus,
+0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,Rubella,C
+1,0,1,1,0,1,0,0,1,1,0,0,0,0,0,0,0,Lassa Virus,C
+1,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,Rubeola Virus,C
+0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,Varicella,C
+0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,Herpes Zoster Virus,C
+1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,0,0,Japanese B Encephalitis Virus,C
+1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,Bacillus Anthracis,C
+1,0,1,1,1,0,1,1,0,1,0,0,0,0,0,0,0,Middle East Respiratory Syndrome,C
+0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,Borna Virus Disease,C
+1,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,Infectious Polyneuritis,C
+1,0,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0,Zika Virus,C
+1,1,0,0,1,0,1,1,1,1,0,0,0,0,0,0,0,Primary Amebic Meningoencephalitis,C
+1,0,1,1,1,0,1,1,0,1,0,0,0,0,0,0,0,Melioidosis,C
+0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,Miliary Tuberculosis,C
+1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,Human T-Lymphotropic Virus,C
+0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,Eastern Equine Encephalitis Virus,C
+1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,Monkeypox Virus,C
+0,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,Severe Acute Respiratory Syndrome,I
+1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,Chlamydia Psittaci,C
+0,0,1,0,1,1,1,0,0,1,0,0,0,0,0,0,0,Encephalomyelitis,C
+1,1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,Hemorrhagic Septicemia,C
+1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,Neonatal Sepsis,C
+1,1,1,1,0,1,1,0,1,0,0,0,0,0,0,0,0,Yellow Fever Virus,C
+0,1,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,Hepatitis E,C
+1,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,Epidemic Typhus,C
+1,1,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,Leptospirosis,C
+1,1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,Crimean-Congo Hemorrhagic Fever,C
