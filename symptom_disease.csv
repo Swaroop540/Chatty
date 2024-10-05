@@ -1,7 +1,7 @@
 fever,cough,headache,fatigue,sore_throat,shortness_of_breath,chest_pain,nausea,diarrhea,rash,joint_pain,eye_irritation,vision_problems,abnormal_menstrual_bleeding,menstrual_cramps,bloating,acid_reflux,disease,category
 1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Flu,C
 1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,Common Cold,C
-0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,C
+0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,Migraine,C
 1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,Pneumonia,C
 0,1,0,0,1,0,0,1,1,0,0,0,0,0,0,1,0,Gastroenteritis,C
 1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,COVID-19,C
