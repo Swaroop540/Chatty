@@ -13,8 +13,8 @@ import numpy as np
 import re
 from datetime import datetime
 import random
+import csv
 
-# Dictionary of diseases and corresponding reference links
 disease_links = {
     "Flu": "https://www.healthline.com/health/flu-causes",
     "Common Cold": "https://www.healthline.com/health/common-cold",
@@ -95,14 +95,13 @@ disease_links = {
     "Rubella": "https://www.who.int/news-room/fact-sheets/detail/rubella#:~:text=Rubella%20is%20a%20contagious%20viral,(CRS)%20each%20year%20worldwide."
 }
 
-
 def load_data():
-    data = pd.read_csv('symptom_disease.csv') 
+    data = pd.read_csv('symptom_disease.csv')  
     return data
 
 def train_model(data):
-    X = data.iloc[:, :-1]  
-    y = data.iloc[:, -1]   
+    X = data.iloc[:, :-2]  # Exclude last two columns (disease and category)
+    y = data.iloc[:, -2]   # Second last column (disease) as target
     
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
@@ -112,7 +111,7 @@ def train_model(data):
     
     return rf_model, label_encoder
 
-def predict_disease(symptoms, model, label_encoder, feature_columns):
+def predict_diseases(symptoms, model, label_encoder, feature_columns):
     input_vector = np.zeros(len(feature_columns))
     
     for symptom in symptoms:
@@ -120,22 +119,61 @@ def predict_disease(symptoms, model, label_encoder, feature_columns):
             symptom_index = feature_columns.index(symptom)
             input_vector[symptom_index] = 1
     
-    prediction = model.predict([input_vector])
-    disease_name = label_encoder.inverse_transform(prediction)
+    probabilities = model.predict_proba([input_vector])[0]
+    top_indices = np.argsort(probabilities)[-3:]  # Top 3 possible diseases
+    possible_diseases = label_encoder.inverse_transform(top_indices)
     
-    return disease_name[0]
+    return possible_diseases
 
 def extract_symptoms(user_input, feature_columns):
     cleaned_input = re.sub(r'[^a-zA-Z\s]', '', user_input.lower())
-    
     detected_symptoms = [symptom for symptom in feature_columns if symptom.lower() in cleaned_input]
     return detected_symptoms
+
+def get_category(disease, data):
+    # Extract the category based on the predicted disease from the dataset
+    category_row = data[data['disease'] == disease]
+    if not category_row.empty:
+        return category_row['category'].values[0]
+    return None
+
+def suggest_nutrition(category):
+    nutrition = ""
+
+    if category == 'A':  # Cardiovascular Health
+        nutrition = ("Heart-Healthy Fats (avocados, nuts, olive oil), Omega-3s (salmon, flaxseeds), "
+                     "Fiber (whole grains, legumes), Limit Sodium")
+    elif category == 'B':  # Bone Health
+        nutrition = ("Calcium (dairy, leafy greens), Vitamin D (sun, fatty fish), Magnesium (nuts, seeds)")
+    elif category == 'C':  # Immune Support
+        nutrition = ("Vitamin C (citrus, bell peppers), Zinc (meat, legumes), Vitamin A (carrots, spinach)")
+    elif category == 'D':  # Blood Sugar Management
+        nutrition = ("Complex Carbs (whole grains, legumes), Fiber (vegetables), Limit Added Sugars")
+    elif category == 'E':  # Brain Health
+        nutrition = ("Antioxidants (berries, dark chocolate), Healthy Fats (Omega-3), B Vitamins (whole grains)")
+    elif category == 'F':  # Digestive Health
+        nutrition = ("Fiber (promotes regular bowel movements), Probiotics (yogurt, kefir), Hydration")
+    elif category == 'G':  # Weight Management
+        nutrition = ("Caloric Balance, Lean Proteins (chicken, fish), Whole Foods (minimize processed foods)")
+    elif category == 'H':  # Eye Health
+        nutrition = ("Lutein and Zeaxanthin (leafy greens, eggs), Vitamin A (carrots, sweet potatoes)")
+    elif category == 'I':  # Skip
+        nutrition = ("Data to be uploaded soon")
+    
+    return nutrition if nutrition else "No specific nutrition advice available for this condition."
+
+
+def log_interaction(user_input, predictions, feedback=None):
+    with open('user_interactions.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([user_input, ", ".join(predictions), feedback, datetime.now()])
 
 def handle_greeting(user_input):
     greetings = ["hello", "hi", "hey"]
     if any(greeting in user_input.lower() for greeting in greetings):
         return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?"])
 
+# Handle basic NLP questions
 def handle_nlp_questions(user_input):
     user_input = user_input.lower()
     if "time" in user_input:
@@ -153,9 +191,12 @@ def handle_nlp_questions(user_input):
     else:
         return None
 
+# Provide a link for more information about the predicted disease
 def get_disease_link(disease_name):
     return disease_links.get(disease_name, "Sorry, I don't have a link for this disease.")
 
+
+# Main Streamlit app logic
 def main():
     st.set_page_config(page_title="Chatty - MedBot", page_icon="💬", layout="wide")
 
@@ -175,29 +216,52 @@ def main():
         """, unsafe_allow_html=True)
 
     st.title("Medical Diagnosis Chatbot")
-    st.subheader("Describe your symptoms to get a possible diagnosis.")
+    st.subheader("Describe your symptoms to get a possible diagnosis and nutritional suggestions.")
 
+    # Load data and train the model
     data = load_data()
     rf_model, label_encoder = train_model(data)
 
+    # User input for symptoms
     user_input = st.text_input("Enter your symptoms (e.g., 'I have a headache and fever'):")
 
     if user_input:
         greeting_response = handle_greeting(user_input)
         nlp_response = handle_nlp_questions(user_input)
 
+        # Handle greeting and basic NLP responses
         if greeting_response:
             st.write(greeting_response)
         elif nlp_response:
             st.write(nlp_response)
         else:
-            symptoms = extract_symptoms(user_input, list(data.columns[:-1]))
+            # Extract symptoms and predict multiple diseases
+            symptoms = extract_symptoms(user_input, list(data.columns[:-2]))  # Exclude disease and category columns
             
             if symptoms:
-                diagnosis = predict_disease(symptoms, rf_model, label_encoder, list(data.columns[:-1]))
-                disease_link = get_disease_link(diagnosis)
-                st.success(f"Based on the symptoms you mentioned, you may have: {diagnosis}. It's always best to consult a physician for an accurate diagnosis.")
-                st.markdown(f"**Learn more about {diagnosis}:** [Click here]({disease_link})")
+                possible_diseases = predict_diseases(symptoms, rf_model, label_encoder, list(data.columns[:-2]))
+                st.write("Based on the symptoms you mentioned, these are some possible conditions:")
+                
+                for disease in possible_diseases:
+                    category = get_category(disease, data)
+                    nutrition = suggest_nutrition(category)
+                    
+                    # Display each possible diagnosis and suggestions
+                    st.markdown(f"**{disease}:**")
+                    st.markdown(f"**Category:** {category}")
+                    st.markdown(f"**Nutrition Suggestion:** {nutrition}")
+                
+                st.success("These conditions can range from less complex to serious ones. It's always recommended to consult a doctor for an accurate diagnosis.")
+                
+                # Collect feedback
+                feedback = st.radio("Was this suggestion helpful?", ["Yes", "No"])
+                if feedback == "Yes":
+                    st.write("Great! We're happy to help!")
+                else:
+                    st.write("Thank you for your feedback, we'll improve our suggestions.")
+                
+                # Log interaction
+                log_interaction(user_input, possible_diseases, feedback)
             else:
                 st.error("Sorry, I couldn't detect any known symptoms. Please try again with more details.")
 
