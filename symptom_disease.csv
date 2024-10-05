@@ -125,7 +125,7 @@ fever,cough,headache,fatigue,sore_throat,shortness_of_breath,chest_pain,nausea,d
 1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,Salmonellosis,C
 1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,Toxoplasmosis,C
 1,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,Onchocerciasis,C
-1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,Rabies Hemorrhagic Fever.C
+1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,Rabies Hemorrhagic Fever,C
 1,0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,HIV/AIDS,C
 0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,Hepatitis C Virus,C
 1,1,1,0,0,1,1,0,1,0,0,0,0,0,0,0,0,Viral Hepatitis E,C
