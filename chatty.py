@@ -100,8 +100,8 @@ def load_data():
     return data
 
 def train_model(data):
-    X = data.iloc[:, :-2]  # Exclude last two columns (disease and category)
-    y = data.iloc[:, -2]   # Second last column (disease) as target
+    X = data.iloc[:, :-2]  
+    y = data.iloc[:, -2] 
     
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
@@ -131,7 +131,6 @@ def extract_symptoms(user_input, feature_columns):
     return detected_symptoms
 
 def get_category(disease, data):
-    # Extract the category based on the predicted disease from the dataset
     category_row = data[data['disease'] == disease]
     if not category_row.empty:
         return category_row['category'].values[0]
@@ -140,24 +139,24 @@ def get_category(disease, data):
 def suggest_nutrition(category):
     nutrition = ""
 
-    if category == 'A':  # Cardiovascular Health
+    if category == 'A':  
         nutrition = ("Heart-Healthy Fats (avocados, nuts, olive oil), Omega-3s (salmon, flaxseeds), "
                      "Fiber (whole grains, legumes), Limit Sodium")
-    elif category == 'B':  # Bone Health
+    elif category == 'B':  
         nutrition = ("Calcium (dairy, leafy greens), Vitamin D (sun, fatty fish), Magnesium (nuts, seeds)")
-    elif category == 'C':  # Immune Support
+    elif category == 'C':  
         nutrition = ("Vitamin C (citrus, bell peppers), Zinc (meat, legumes), Vitamin A (carrots, spinach)")
-    elif category == 'D':  # Blood Sugar Management
+    elif category == 'D':  
         nutrition = ("Complex Carbs (whole grains, legumes), Fiber (vegetables), Limit Added Sugars")
-    elif category == 'E':  # Brain Health
+    elif category == 'E':  
         nutrition = ("Antioxidants (berries, dark chocolate), Healthy Fats (Omega-3), B Vitamins (whole grains)")
-    elif category == 'F':  # Digestive Health
+    elif category == 'F':  
         nutrition = ("Fiber (promotes regular bowel movements), Probiotics (yogurt, kefir), Hydration")
-    elif category == 'G':  # Weight Management
+    elif category == 'G':  
         nutrition = ("Caloric Balance, Lean Proteins (chicken, fish), Whole Foods (minimize processed foods)")
-    elif category == 'H':  # Eye Health
+    elif category == 'H':  
         nutrition = ("Lutein and Zeaxanthin (leafy greens, eggs), Vitamin A (carrots, sweet potatoes)")
-    elif category == 'I':  # Skip
+    elif category == 'I':  
         nutrition = ("Data to be uploaded soon")
     
     return nutrition if nutrition else "No specific nutrition advice available for this condition."
@@ -169,11 +168,10 @@ def log_interaction(user_input, predictions, feedback=None):
         writer.writerow([user_input, ", ".join(predictions), feedback, datetime.now()])
 
 def handle_greeting(user_input):
-    greetings = ["hello", "hi", "hey"]
+    greetings = ["hello", "hi", "hey","yo"]
     if any(greeting in user_input.lower() for greeting in greetings):
-        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?"])
+        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?","yo!, how can i help you bud?"])
 
-# Handle basic NLP questions
 def handle_nlp_questions(user_input):
     user_input = user_input.lower()
     if "time" in user_input:
@@ -191,14 +189,12 @@ def handle_nlp_questions(user_input):
     else:
         return None
 
-# Provide a link for more information about the predicted disease
 def get_disease_link(disease_name):
     return disease_links.get(disease_name, "Sorry, I don't have a link for this disease.")
 
 
-# Main Streamlit app logic
 def main():
-    st.set_page_config(page_title="Chatty - MedBot", page_icon="💬", layout="wide")
+    st.set_page_config(page_title="MAI - MedAI", page_icon="💬", layout="wide")
 
     st.markdown("""
         <style>
@@ -218,25 +214,21 @@ def main():
     st.title("Medical Diagnosis Chatbot")
     st.subheader("Describe your symptoms to get a possible diagnosis and nutritional suggestions.")
 
-    # Load data and train the model
     data = load_data()
     rf_model, label_encoder = train_model(data)
 
-    # User input for symptoms
     user_input = st.text_input("Enter your symptoms (e.g., 'I have a headache and fever'):")
 
     if user_input:
         greeting_response = handle_greeting(user_input)
         nlp_response = handle_nlp_questions(user_input)
 
-        # Handle greeting and basic NLP responses
         if greeting_response:
             st.write(greeting_response)
         elif nlp_response:
             st.write(nlp_response)
         else:
-            # Extract symptoms and predict multiple diseases
-            symptoms = extract_symptoms(user_input, list(data.columns[:-2]))  # Exclude disease and category columns
+            symptoms = extract_symptoms(user_input, list(data.columns[:-2]))  
             
             if symptoms:
                 possible_diseases = predict_diseases(symptoms, rf_model, label_encoder, list(data.columns[:-2]))
@@ -246,22 +238,19 @@ def main():
                     category = get_category(disease, data)
                     nutrition = suggest_nutrition(category)
                     
-                    # Display each possible diagnosis and suggestions
                     st.markdown(f"**{disease}:**")
                     st.markdown(f"**Category:** {category}")
                     st.markdown(f"**Nutrition Suggestion:** {nutrition}")
                 
                 st.success("These conditions can range from less complex to serious ones. It's always recommended to consult a doctor for an accurate diagnosis.")
                 
-                # Collect feedback
                 feedback = st.radio("Was this suggestion helpful?", ["Yes", "No"])
                 if feedback == "Yes":
                     st.write("Great! We're happy to help!")
                 else:
                     st.write("Thank you for your feedback, we'll improve our suggestions.")
                 
-                # Log interaction
-                log_interaction(user_input, possible_diseases, feedback)
+                log_interaction(user_input, possible_diseases,category, feedback)
             else:
                 st.error("Sorry, I couldn't detect any known symptoms. Please try again with more details.")
 
