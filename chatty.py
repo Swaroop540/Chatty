@@ -404,7 +404,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-    st.title("Welcome to MaI - MedAI ")
+    st.title("Medical Diagnosis Chatbot")
     st.subheader("Describe your symptoms to get a possible diagnosis and nutritional suggestions.")
 
     data = load_data()
@@ -427,15 +427,21 @@ def main():
                 possible_diseases = predict_diseases(symptoms, rf_model, label_encoder, list(data.columns[:-2]))
                 st.write("Based on the symptoms you mentioned, these are some possible conditions:")
 
-                for disease in possible_diseases:
+                # Create columns for displaying diseases in a grid
+                num_diseases = len(possible_diseases)
+                cols = st.columns(3)  # Create 3 columns in a row
+
+                for i, disease in enumerate(possible_diseases):
                     category = get_category(disease, data)
                     nutrition = suggest_nutrition(category)
                     link = get_disease_link(disease)
 
-                    st.markdown(f"**{disease}:**")
-                    st.markdown(f"**Category:** {category}")
-                    st.markdown(f"**Nutrition Suggestion:** {nutrition}")
-                    st.markdown(f"**More Information:** [Click here]({link})")
+                    # Display disease info in grid
+                    with cols[i % 3]:  # Fill the columns sequentially
+                        st.markdown(f"### **{disease}**")
+                        st.markdown(f"**Category:** {category}")
+                        st.markdown(f"**Nutrition Suggestion:** {nutrition}")
+                        st.markdown(f"**[More Information]({link})**")
 
                 st.success("These conditions can range from less complex to serious ones. It's always recommended to consult a doctor for an accurate diagnosis.")
 
