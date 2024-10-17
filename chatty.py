@@ -248,7 +248,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-    st.title("Medical Diagnosis Chatbot")
+    st.title("Welcome to MaI - MedAI ")
     st.subheader("Describe your symptoms to get a possible diagnosis and nutritional suggestions.")
 
     data = load_data()
