@@ -98,7 +98,7 @@ disease_links = {
 }
 
 def load_data():
-    data = pd.read_json('symptom_disease.json')
+    data = pd.read_json(r'C:\Users\swaro\Desktop\chatty\symptom_disease.json')
     return data
 
 def train_model(data):
@@ -205,9 +205,9 @@ def log_interaction(user_input, predictions, category, feedback=None):
 
 
 def handle_greeting(user_input):
-    greetings = ["hello", "hi", "hey", "yo"]
+    greetings = ["hello", "hi", "hey", "yo","hola"]
     if any(greeting in user_input.lower() for greeting in greetings):
-        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?", "Yo! How can I help you?"])
+        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?", "Yo! How can I help you?","Hola! How can I help you?"])
 
 def handle_nlp_questions(user_input):
     user_input = user_input.lower()
@@ -226,8 +226,9 @@ def handle_nlp_questions(user_input):
     else:
         return None
 
+
 def get_disease_link(disease_name):
-    return disease_links.get(disease_name, "Sorry, I don't have a link for this disease.")
+    return disease_links.get(disease_name, "Link will be updated soon.")
 
 def main():
     st.set_page_config(page_title="MAI - MedAI", page_icon="💬", layout="wide")
@@ -273,10 +274,12 @@ def main():
                 for disease in possible_diseases:
                     category = get_category(disease, data)
                     nutrition = suggest_nutrition(category)
+                    link = get_disease_link(disease)
 
                     st.markdown(f"**{disease}:**")
                     st.markdown(f"**Category:** {category}")
                     st.markdown(f"**Nutrition Suggestion:** {nutrition}")
+                    st.markdown(f"**More Information:** [Click here]({link})")
 
                 st.success("These conditions can range from less complex to serious ones. It's always recommended to consult a doctor for an accurate diagnosis.")
 
