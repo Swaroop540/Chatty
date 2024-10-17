@@ -98,7 +98,7 @@ disease_links = {
 }
 
 def load_data():
-    data = pd.read_json(r'C:\Users\swaro\Desktop\chatty\symptom_disease.json')
+    data = pd.read_json('symptom_disease.json')
     return data
 
 def train_model(data):
