@@ -14,6 +14,8 @@ import re
 from datetime import datetime
 import random
 import csv
+import json
+import os
 
 disease_links = {
     "Flu": "https://www.healthline.com/health/flu-causes",
@@ -96,33 +98,33 @@ disease_links = {
 }
 
 def load_data():
-    data = pd.read_csv('symptom_disease.csv')  
+    data = pd.read_json(r'C:\Users\swaro\Desktop\chatty\symptom_disease.json')
     return data
 
 def train_model(data):
     X = data.iloc[:, :-2]  
-    y = data.iloc[:, -2] 
-    
+    y = data.iloc[:, -2]  
+
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
-    
+
     rf_model = RandomForestClassifier()
     rf_model.fit(X, y_encoded)
-    
+
     return rf_model, label_encoder
 
 def predict_diseases(symptoms, model, label_encoder, feature_columns):
     input_vector = np.zeros(len(feature_columns))
-    
+
     for symptom in symptoms:
         if symptom in feature_columns:
             symptom_index = feature_columns.index(symptom)
             input_vector[symptom_index] = 1
-    
+
     probabilities = model.predict_proba([input_vector])[0]
     top_indices = np.argsort(probabilities)[-3:]  # Top 3 possible diseases
     possible_diseases = label_encoder.inverse_transform(top_indices)
-    
+
     return possible_diseases
 
 def extract_symptoms(user_input, feature_columns):
@@ -139,38 +141,73 @@ def get_category(disease, data):
 def suggest_nutrition(category):
     nutrition = ""
 
-    if category == 'A':  
+    if category == 'A':  # Cardiovascular Health
         nutrition = ("Heart-Healthy Fats (avocados, nuts, olive oil), Omega-3s (salmon, flaxseeds), "
                      "Fiber (whole grains, legumes), Limit Sodium")
-    elif category == 'B':  
+    elif category == 'B':  # Bone Health
         nutrition = ("Calcium (dairy, leafy greens), Vitamin D (sun, fatty fish), Magnesium (nuts, seeds)")
-    elif category == 'C':  
+    elif category == 'C':  # Immune Support
         nutrition = ("Vitamin C (citrus, bell peppers), Zinc (meat, legumes), Vitamin A (carrots, spinach)")
-    elif category == 'D':  
+    elif category == 'D':  # Blood Sugar Management
         nutrition = ("Complex Carbs (whole grains, legumes), Fiber (vegetables), Limit Added Sugars")
-    elif category == 'E':  
+    elif category == 'E':  # Brain Health
         nutrition = ("Antioxidants (berries, dark chocolate), Healthy Fats (Omega-3), B Vitamins (whole grains)")
-    elif category == 'F':  
+    elif category == 'F':  # Digestive Health
         nutrition = ("Fiber (promotes regular bowel movements), Probiotics (yogurt, kefir), Hydration")
-    elif category == 'G':  
+    elif category == 'G':  # Weight Management
         nutrition = ("Caloric Balance, Lean Proteins (chicken, fish), Whole Foods (minimize processed foods)")
-    elif category == 'H':  
+    elif category == 'H':  # Eye Health
         nutrition = ("Lutein and Zeaxanthin (leafy greens, eggs), Vitamin A (carrots, sweet potatoes)")
-    elif category == 'I':  
+    elif category == 'I':  # Skip
         nutrition = ("Data to be uploaded soon")
     
     return nutrition if nutrition else "No specific nutrition advice available for this condition."
 
+import json
+import os
+import numpy as np  
+from datetime import datetime
 
-def log_interaction(user_input, predictions, feedback=None):
-    with open('user_interactions.csv', 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([user_input, ", ".join(predictions), feedback, datetime.now()])
+
+
+def log_interaction(user_input, predictions, category, feedback=None):
+    if isinstance(predictions, np.ndarray):
+        predictions = predictions.tolist()
+    
+    interaction = {
+        "user_input": user_input,
+        "predictions": predictions,  
+        "category": category,
+        "feedback": feedback,
+        "timestamp": datetime.now().isoformat()
+    }
+
+    json_file_path = 'user_interactions.json'
+
+    if os.path.exists(json_file_path):
+        
+        if os.stat(json_file_path).st_size > 0:
+            try:
+                with open(json_file_path, 'r') as file:
+                    data = json.load(file)
+            except json.JSONDecodeError:
+                print("Error: JSON file is malformed. Creating a new file.")
+                data = []  
+        else:
+            data = []  
+        data = []  
+
+    data.append(interaction)
+
+    with open(json_file_path, 'w') as file:
+        json.dump(data, file, indent=4)
+
+
 
 def handle_greeting(user_input):
-    greetings = ["hello", "hi", "hey","yo"]
+    greetings = ["hello", "hi", "hey", "yo"]
     if any(greeting in user_input.lower() for greeting in greetings):
-        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?","yo!, how can i help you bud?"])
+        return random.choice(["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hey! What can I do for you?", "Yo! How can I help you?"])
 
 def handle_nlp_questions(user_input):
     user_input = user_input.lower()
@@ -191,7 +228,6 @@ def handle_nlp_questions(user_input):
 
 def get_disease_link(disease_name):
     return disease_links.get(disease_name, "Sorry, I don't have a link for this disease.")
-
 
 def main():
     st.set_page_config(page_title="MAI - MedAI", page_icon="💬", layout="wide")
@@ -228,29 +264,29 @@ def main():
         elif nlp_response:
             st.write(nlp_response)
         else:
-            symptoms = extract_symptoms(user_input, list(data.columns[:-2]))  
-            
+            symptoms = extract_symptoms(user_input, list(data.columns[:-2]))
+
             if symptoms:
                 possible_diseases = predict_diseases(symptoms, rf_model, label_encoder, list(data.columns[:-2]))
                 st.write("Based on the symptoms you mentioned, these are some possible conditions:")
-                
+
                 for disease in possible_diseases:
                     category = get_category(disease, data)
                     nutrition = suggest_nutrition(category)
-                    
+
                     st.markdown(f"**{disease}:**")
                     st.markdown(f"**Category:** {category}")
                     st.markdown(f"**Nutrition Suggestion:** {nutrition}")
-                
+
                 st.success("These conditions can range from less complex to serious ones. It's always recommended to consult a doctor for an accurate diagnosis.")
-                
+
                 feedback = st.radio("Was this suggestion helpful?", ["Yes", "No"])
                 if feedback == "Yes":
                     st.write("Great! We're happy to help!")
                 else:
                     st.write("Thank you for your feedback, we'll improve our suggestions.")
-                
-                log_interaction(user_input, possible_diseases,category, feedback)
+
+                log_interaction(user_input, possible_diseases, feedback)
             else:
                 st.error("Sorry, I couldn't detect any known symptoms. Please try again with more details.")
 
