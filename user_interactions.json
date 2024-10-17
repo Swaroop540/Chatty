@@ -1,0 +1,46 @@
+[
+    {
+        "user_input": "cough",
+        "predictions": [
+            "Conjunctivitis",
+            "Abnormal Menstrual Bleeding",
+            "Allergic Rhinitis"
+        ],
+        "category": "Yes",
+        "feedback": null,
+        "timestamp": "2024-10-17T09:50:38.498701"
+    },
+    {
+        "user_input": "help me with these symptoms, i got fever and headache",
+        "predictions": [
+            "Tension Headache",
+            "Lyme Borreliosis",
+            "Cluster Headache"
+        ],
+        "category": "Yes",
+        "feedback": null,
+        "timestamp": "2024-10-17T12:06:54.871625"
+    },
+    {
+        "user_input": "help me with these symptoms, i got fever and headache",
+        "predictions": [
+            "Tension Headache",
+            "Rotavirus Infection",
+            "Lyme Borreliosis"
+        ],
+        "category": "No",
+        "feedback": null,
+        "timestamp": "2024-10-17T12:07:13.212112"
+    },
+    {
+        "user_input": "help me with these symptoms, i got fever and headache",
+        "predictions": [
+            "Cluster Headache",
+            "Rotavirus Infection",
+            "Lyme Borreliosis"
+        ],
+        "category": "Yes",
+        "feedback": null,
+        "timestamp": "2024-10-17T12:07:15.083368"
+    }
+]
